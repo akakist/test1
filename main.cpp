@@ -22,7 +22,8 @@ struct _mx {
 };
 
 _mx mx;
-//std::string templ;
+
+/// worker to read lines from file & put them into mx.dq
 void file_reader(const std::string & filename)
 {
     FILE* f=fopen(filename.c_str(),"r");
@@ -69,6 +70,8 @@ void file_reader(const std::string & filename)
     return;
 
 }
+
+/// worker to scan line for matching template & print out result
 void scanner(const std::string & templ)
 {
     while(true)
